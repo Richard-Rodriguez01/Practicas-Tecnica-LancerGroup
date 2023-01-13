@@ -35,6 +35,7 @@ $routes->group("user",function($routes){
     $routes->get('home','UserController::index',['as'=>'user.home']);
     $routes->get('addBook','UserController::addBook',['as'=>'user.addBook']);
     $routes->get('addAuthor','UserController::addAuthor',['as'=>'user.addAuthor']);
+    $routes->get('author','UserController::ListAuthor',['as'=>'user.author']);
 });
 
 /*

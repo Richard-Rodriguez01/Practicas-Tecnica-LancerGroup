@@ -31,9 +31,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?= route_to('user.home') ?>" class="nav-link <?= (current_url() == base_url('user/home')) ? 'active' : ''; ?>">Home</a>
+        <a href="<?= route_to('user.home') ?>" class="nav-link <?= (current_url() == base_url('user/home')) ? 'active' : ''; ?>">Libros</a>
       </li>
-      
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="<?= route_to('user.author') ?>" class="nav-link <?= (current_url() == base_url('user/author')) ? 'active' : 'Autores'; ?>">Autores</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->

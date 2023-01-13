@@ -13,7 +13,12 @@ class UserController extends BaseController
         $data['pageTitle'] = 'Home';
         return view('dashboard/home',$datos,$data);
     }
-
+    public function ListAuthor(){
+        $author = new AuthorModel();
+        $datos['autores'] = $author->orderBy('id','ASC')->findAll();
+        $data['pageTitle'] = 'ListAuthor';
+        return view('dashboard/author',$datos,$data);
+    }
     public function addBook(){
         $data['pageTitle'] = 'Add Book';
         return view('dashboard/addBook',$data);
