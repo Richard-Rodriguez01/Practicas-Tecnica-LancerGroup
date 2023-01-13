@@ -19,6 +19,35 @@ class UserController extends BaseController
         $data['pageTitle'] = 'ListAuthor';
         return view('dashboard/author',$datos,$data);
     }
+    public function DetalleBook(){
+        return view('dashboard/detalleBook');
+    }
+    public function eliminar($id=null){
+        // echo 'Borrar registro'.$id;
+        $libro = new BookModel();
+        $datosLibro = $libro->where('id',$id)->first();
+        $libro->where('id',$id)->delete($id);
+        return $this->response->redirect(site_url('/user/home'));
+
+    }
+    public function editar($id=null){
+        //print_r($id);
+        $libro = new BookModel();
+        $datos['libro']=$libro->where('id',$id)->first();
+        return view('pages/editBook',$datos);
+    }
+    public function actualizarLibro(){
+        $libro = new BookModel();
+        $datos=[
+            'Nombre'=>$this->request->getVar('inputNombre'),
+            'Fecha_publicacion'=>$this->request->getVar('inputFpublicacion'),
+            'Edicion'=>$this->request->getVar('inputEdicion'),
+            'Autor_id'=>$this->request->getVar('inputAutor')
+        ];
+        $id= $this->request->getVar('inputId');
+        $libro->update($id,$datos);
+        return $this->response->redirect(site_url('/user/home'));
+    }
     public function addBook(){
         $data['pageTitle'] = 'Add Book';
         return view('dashboard/addBook',$data);
@@ -37,7 +66,7 @@ class UserController extends BaseController
             'Autor_id'=>$this->request->getVar('inputAutor')
         ];
         $libro->insert($datos);
-        redirect('dashboard/home', 'refresh');
+        return $this->response->redirect(site_url('/user/home'));
     }
     public function guardarAuthor(){
         $author = new AuthorModel();

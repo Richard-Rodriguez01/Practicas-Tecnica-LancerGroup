@@ -36,6 +36,8 @@ $routes->group("user",function($routes){
     $routes->get('addBook','UserController::addBook',['as'=>'user.addBook']);
     $routes->get('addAuthor','UserController::addAuthor',['as'=>'user.addAuthor']);
     $routes->get('author','UserController::ListAuthor',['as'=>'user.author']);
+    $routes->get('detalleBook','UserController::DetalleBook',['as'=>'user.detalleBook']);
+    // $routes->get('editar/(:num)', 'UserController::editar/$1',['as'=>'user.editar']);
 });
 
 /*
@@ -55,4 +57,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->post('guardarLibro', 'UserController::guardarLibro');
+$routes->post('actualizarLibro', 'UserController::actualizarLibro');
 $routes->post('guardarAuthor', 'UserController::guardarAuthor');
+$routes->get('eliminar/(:num)', 'UserController::eliminar/$1');
+$routes->get('editar/(:num)', 'UserController::editar/$1');

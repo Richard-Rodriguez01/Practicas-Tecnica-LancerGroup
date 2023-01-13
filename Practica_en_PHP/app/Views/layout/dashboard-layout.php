@@ -149,12 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <h1 class="m-0"><?= (isset($pageTitle)) ? $pageTitle : '';?></h1>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?= route_to('user.home'); ?>">Home</a></li>
-              <li class="breadcrumb-item active"><?= (isset($pageTitle)) ? $pageTitle : 'home';?></li>
-            </ol>
-          </div><!-- /.col -->
+          
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

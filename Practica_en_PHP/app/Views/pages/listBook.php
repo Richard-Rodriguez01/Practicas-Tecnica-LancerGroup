@@ -23,8 +23,8 @@
                 <td><?= $libro['Edicion'];?></td>
                 
                 <td>
-                <a href="" class="btn btn-info" type="button">Ver detalles</a>
-                <a href="" class="btn btn-primary" type="button">Editar</a>    
+                <a href="<?=base_url('user/detalleBook');?>" class="btn btn-info" type="button">Ver detalles</a>
+                <a href="<?=base_url('editar/'.$libro['id']);?>" class="btn btn-primary" type="button">Editar</a>    
                 <a href="<?=base_url('eliminar/'.$libro['id']);?>" class="btn btn-danger" type="button">Eliminar</a>
             </td>
                 
